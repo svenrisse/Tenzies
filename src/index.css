@@ -10,7 +10,18 @@ body {
 
 .app-container {
     height: 80vh;
-    width: 85vw;
-    background-color: #e4e4e7;
+    width: 60vw;
+    background-color: #F5F5F5;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 15%;
+    margin-right: 10vw;
 }
