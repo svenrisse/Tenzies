@@ -20,6 +20,19 @@ body {
     align-items: center;
 }
 
+.title {
+    font-size: 40px;
+    margin: 0;
+}
+
+.instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+    margin: 5%;
+}
+
 .dice-container {
     display: grid;
     grid-template: auto auto / repeat(5, 1fr);
@@ -48,14 +61,3 @@ body {
     outline: none;
 }
 
-.title {
-    font-size: 40px;
-    margin: 0;
-}
-
-.instructions {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    margin-top: 0;
-    text-align: center;
-}
