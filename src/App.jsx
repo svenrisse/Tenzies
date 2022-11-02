@@ -18,7 +18,7 @@ function App() {
     }
 
     const dices = diceNumbers.map((die) => {
-        return <Dice key={die.id} value={die.value} />;
+        return <Dice key={die.id} value={die.value} isHeld={die.isHeld}/>;
     });
 
     function rollDice() {
