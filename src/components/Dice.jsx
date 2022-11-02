@@ -5,7 +5,7 @@ export default function Dice(props) {
         backgroundColor: props.isHeld ? "#59E391" : "white"
     }
     return (
-        <div className="dice-face" style={styles}>
+        <div className="dice-face" style={styles} onClick={() => props.handleClick()}>
             <h2 className="dice-number">{props.value}</h2>
         </div>
     );

@@ -6,7 +6,7 @@ function App() {
     const [diceNumbers, setDiceNumbers] = useState(allNewDice());
 
     function allNewDice() {
-        const newDice = [];
+        const newDice = []
         for (let i = 0; i < 10; i++) {
             newDice.push({
                 value: Math.ceil(Math.random() * 6),
@@ -18,11 +18,23 @@ function App() {
     }
 
     const dices = diceNumbers.map((die) => {
-        return <Dice key={die.id} value={die.value} isHeld={die.isHeld}/>;
+        return (
+            <Dice
+                key={die.id}
+                value={die.value}
+                isHeld={die.isHeld}
+                handleClick={() => holdDice(die.id)}
+            />
+        );
     });
 
     function rollDice() {
         setDiceNumbers(allNewDice());
+    }
+    function holdDice(id) {
+        setDiceNumbers(oldDice => oldDice.map(die => {
+            return die.id === id ? {...die, isHeld: !die.isHeld} : die
+        }))
     }
 
     return (
