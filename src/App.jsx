@@ -5,14 +5,18 @@ import Dice from "./components/Dice";
 function App() {
     const [diceNumbers, setDiceNumbers] = useState(allNewDice());
 
+    function generateNewDie() {
+        return {
+            value: Math.ceil(Math.random() * 6),
+            isHeld: false,
+            id: nanoid(),
+        };
+    }
+
     function allNewDice() {
-        const newDice = []
+        const newDice = [];
         for (let i = 0; i < 10; i++) {
-            newDice.push({
-                value: Math.ceil(Math.random() * 6),
-                isHeld: false,
-                id: nanoid(),
-            });
+            newDice.push(generateNewDie());
         }
         return newDice;
     }
@@ -29,12 +33,18 @@ function App() {
     });
 
     function rollDice() {
-        setDiceNumbers(allNewDice());
+        setDiceNumbers((oldDice) =>
+            oldDice.map((die) => {
+                return die.isHeld ? die : generateNewDie();
+            })
+        );
     }
     function holdDice(id) {
-        setDiceNumbers(oldDice => oldDice.map(die => {
-            return die.id === id ? {...die, isHeld: !die.isHeld} : die
-        }))
+        setDiceNumbers((oldDice) =>
+            oldDice.map((die) => {
+                return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
+            })
+        );
     }
 
     return (
