@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import Confetti from "react-confetti"
+import Confetti from "react-confetti";
 import Dice from "./components/Dice";
 
 function App() {
@@ -8,14 +8,16 @@ function App() {
     const [tenzies, setTenzies] = useState(false);
 
     useEffect(() => {
-        const allHeld = diceNumbers.every(die => die.isHeld)
-        const firstValue = diceNumbers[0].value
-        const allSameValue = diceNumbers.every(die => die.value === firstValue)
+        const allHeld = diceNumbers.every((die) => die.isHeld);
+        const firstValue = diceNumbers[0].value;
+        const allSameValue = diceNumbers.every(
+            (die) => die.value === firstValue
+        );
         if (allHeld && allSameValue) {
-            setTenzies(true)
+            setTenzies(true);
             console.log("You won!");
         }
-        }, [diceNumbers])
+    }, [diceNumbers]);
 
     function generateNewDie() {
         return {
@@ -45,11 +47,16 @@ function App() {
     });
 
     function rollDice() {
-        setDiceNumbers((oldDice) =>
-            oldDice.map((die) => {
-                return die.isHeld ? die : generateNewDie()
-            })
-        );
+        if (!tenzies) {
+            setDiceNumbers((oldDice) =>
+                oldDice.map((die) => {
+                    return die.isHeld ? die : generateNewDie();
+                })
+            );
+        } else {
+            setTenzies(false)
+            setDiceNumbers(allNewDice())
+        }
     }
     function holdDice(id) {
         setDiceNumbers((oldDice) =>
