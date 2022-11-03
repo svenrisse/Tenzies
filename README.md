@@ -1,5 +1,10 @@
 Tenzies Game from the [Scrimba React Course](https://scrimba.com/learn/learnreact)
 
+Check it out on:
+[Netlify](https://jocular-speculoos-6e93b7.netlify.app/)
+
+--- 
+
 Tools used:
 
 - React
@@ -7,5 +12,3 @@ Tools used:
 - [react-confetti](https://github.com/alampros/react-confetti)
 - [nano-id](https://github.com/ai/nanoid)
 
-Check it out on:
-[Netlify](https://jocular-speculoos-6e93b7.netlify.app/)
