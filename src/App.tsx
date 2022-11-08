@@ -46,6 +46,14 @@ function App() {
         );
     });
 
+    function holdDice(id: string) {
+        setDiceNumbers((oldDice) =>
+            oldDice.map((die) => {
+                return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
+            })
+        );
+    }
+
     function rollDice() {
         if (!tenzies) {
             setDiceNumbers((oldDice) =>
@@ -54,16 +62,9 @@ function App() {
                 })
             );
         } else {
-            setTenzies(false)
-            setDiceNumbers(allNewDice())
+            setTenzies(false);
+            setDiceNumbers(allNewDice());
         }
-    }
-    function holdDice(id) {
-        setDiceNumbers((oldDice) =>
-            oldDice.map((die) => {
-                return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
-            })
-        );
     }
 
     return (
