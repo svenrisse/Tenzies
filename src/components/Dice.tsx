@@ -16,7 +16,7 @@ export default function Dice(props: IDice) {
         <div
             className="dice-face"
             style={styles}
-            onClick={() => props.handleClick}
+            onClick={props.handleClick}
             
         >
             <h2 className="dice-numbers">{props.value}</h2>
