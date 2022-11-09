@@ -6,6 +6,7 @@ Check it out on:
 Tools used:
 
 - [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [react-confetti](https://github.com/alampros/react-confetti)
 - [nano-id](https://github.com/ai/nanoid)
