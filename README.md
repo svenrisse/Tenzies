@@ -1,6 +1,6 @@
 Tenzies Game from the [Scrimba React Course](https://scrimba.com/learn/learnreact)
 Check it out on:
-[Netlify](https://jocular-speculoos-6e93b7.netlify.app/)
+[Vercel](https://tenzies-tawny.vercel.app/)
 
 
 Tools used:
